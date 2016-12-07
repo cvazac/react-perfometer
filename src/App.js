@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Perf from 'react-addons-perf'
 
 import ComponentYesAnti from './examples/anti-pattern/ComponentYesAnti'
 import ComponentNoAnti from './examples/anti-pattern/ComponentNoAnti'
@@ -34,6 +35,7 @@ export default class App extends Component {
 
   componentDidMount () {
     requestAnimationFrame(() => {
+      Perf.start()
       this.setState({
         componentIndex: 0,
         iteration: 1,
@@ -60,10 +62,12 @@ export default class App extends Component {
         times = []
 
         if (componentIndex === components.length - 1) {
+          Perf.printWasted()
           this.setState({
             done: true,
           })
         } else {
+
           setTimeout(() => {
             this.setState({
               iteration: 1,

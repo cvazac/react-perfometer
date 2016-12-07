@@ -1,13 +1,22 @@
 import React, { PureComponent } from 'react'
-import Outer from './Outer'
-import Inner from './Inner'
 
-const jsx = <Inner />
 export default class JsxAsPropsGood extends PureComponent {
   render() {
     return (
-      <Outer component={jsx} />
+      <OuterGood component={this.getJsx}/>
     )
   }
 
+  getJsx = () => {
+    return <div />
+  }
+
+}
+
+class OuterGood extends PureComponent {
+  render() {
+    return (
+        <div>{this.props.component()}</div>
+    )
+  }
 }
