@@ -1,0 +1,19 @@
+{
+  "name": "@datanerd/react-perfometer",
+  "version": "0.0.1",
+  "author": "Charles Vazac <cvazac@newrelic.com>",
+  "description": "compare update-cycle performance of a list of React Components",
+  "devDependencies": {
+    "react-scripts": "0.7.0"
+  },
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
